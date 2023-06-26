@@ -3,7 +3,6 @@ function solution(skill, skill_trees) {
     let skillArr = skill.split("");
     
     skill_trees.forEach(trees => {
-        let temp = [];
         let treeArr = trees.split("").filter(tree => skillArr.includes(tree));        
         let count = treeArr.filter((t, i) => t === skillArr[i]).length;
         if (count === treeArr.length) answer++;
