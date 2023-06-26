@@ -4,15 +4,10 @@ function solution(skill, skill_trees) {
     
     skill_trees.forEach(trees => {
         let temp = [];
-        let treeArr = trees.split("").filter(tree => skillArr.includes(tree));
-        let count = 0;
-        
-        treeArr.forEach((t, i) => {
-            if (t === skillArr[i]) count++
-        })
-        
-        if (count === treeArr.length) answer++
+        let treeArr = trees.split("").filter(tree => skillArr.includes(tree));        
+        let count = treeArr.filter((t, i) => t === skillArr[i]).length;
+        if (count === treeArr.length) answer++;
     })
 
-    return answer
+    return answer;
 }
